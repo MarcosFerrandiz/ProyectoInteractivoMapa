@@ -220,24 +220,24 @@
     "lat": 38.788458252209935,
     "lng": 0.17838031053543094,
     "name": "test",
-    "description": "",
-    "question": "",
+    "description": "qwerewrewr",
+    "question": "werwerewr",
     "iconType": "monument",
     "answers": [
       {
-        "text": "",
+        "text": "si",
+        "isCorrect": true
+      },
+      {
+        "text": "erwefdsf",
         "isCorrect": false
       },
       {
-        "text": "",
+        "text": "rewrfwfdsf",
         "isCorrect": false
       },
       {
-        "text": "",
-        "isCorrect": false
-      },
-      {
-        "text": "",
+        "text": "ewqewqeqw",
         "isCorrect": false
       }
     ]
