@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1746877786146,
+    "lat": 38.77656962147868,
+    "lng": 0.17578125,
+    "name": "javea",
+    "description": "no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se no se ",
+    "question": "Sin pregunta",
+    "answers": [
+      {
+        "text": "Respuesta 1",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta 2",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta 3",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta 4",
+        "isCorrect": false
+      }
+    ],
+    "correctAnswer": 0,
+    "iconType": "viewpoint"
+  },
+  {
+    "id": 1746877960648,
+    "lat": 38.37503882134334,
+    "lng": -0.46142578125000006,
+    "name": "Alicante",
+    "description": "",
+    "question": "",
+    "answers": [
+      {
+        "text": "Respuesta 1",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta 2",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta 3",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta 4",
+        "isCorrect": false
+      }
+    ],
+    "iconType": "monument"
+  },
+  {
+    "id": 1746885958080,
+    "lat": 38.543332126932796,
+    "lng": -0.13526916503906253,
+    "name": "benidorm",
+    "description": "",
+    "question": "",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "Respuesta A",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta B",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta C",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta D",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1746886405815,
+    "lat": 38.81831117374662,
+    "lng": -0.15930175781250003,
+    "name": "no se",
+    "description": "",
+    "question": "",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "Respuesta A",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta B",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta C",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta D",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1746886425988,
+    "lat": 38.83435910650903,
+    "lng": -0.12737274169921878,
+    "name": "casa nueva",
+    "description": "Mi casa",
+    "question": "¿De quien es la casa?",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "Mia",
+        "isCorrect": true
+      },
+      {
+        "text": "De nadie",
+        "isCorrect": false
+      },
+      {
+        "text": "Tuya",
+        "isCorrect": false
+      },
+      {
+        "text": "No se",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1746887134277,
+    "lat": 38.64234975147789,
+    "lng": 0.04566192626953126,
+    "name": "Calpe",
+    "description": "calpe",
+    "question": "que hay en calpe",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "montaña",
+        "isCorrect": true
+      },
+      {
+        "text": "nada",
+        "isCorrect": false
+      },
+      {
+        "text": "guiris",
+        "isCorrect": false
+      },
+      {
+        "text": "playa",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1746887175728,
+    "lat": 38.64556754366215,
+    "lng": 0.06643295288085939,
+    "name": "Iglesia de calpe",
+    "description": "",
+    "question": "",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "Respuesta A",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta B",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta C",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta D",
+        "isCorrect": false
+      }
+    ]
+  }
+]

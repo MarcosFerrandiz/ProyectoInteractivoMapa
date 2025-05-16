@@ -1,0 +1,141 @@
+/* e:\clase\emanol\ProyectoFinalMapa\ParteMovil\preguntas.css */
+/* Estilos para el Modal de Preguntas (Estilo Kahoot Inferior) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Alinea el contenido del modal abajo */
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s linear; /* Transición para ocultar */
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease; /* Transición para mostrar */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    padding-bottom: 30px; /* Más espacio abajo para móviles con gestos */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 600px; /* Un máximo para pantallas más grandes, opcional */
+    margin: 0 auto; /* Centrado si max-width se activa */
+    border-radius: 18px 18px 0 0; /* Bordes redondeados solo arriba */
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+    transform: translateY(100%); /* Empieza abajo, fuera de la pantalla */
+    transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición suave para deslizar */
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0); /* Desliza hacia arriba a su posición */
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#modalMarkerName {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#modalQuestionText {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 3em; /* Para evitar saltos si la pregunta es corta */
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    grid-template-rows: repeat(2, auto);    /* Dos filas */
+    gap: 12px; /* Espacio entre botones */
+}
+
+.answer-button {
+    padding: 15px 10px;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 70px; /* Altura mínima para los botones */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.answer-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.answer-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Colores base para los botones de respuesta (estilo Kahoot) */
+.answer-button.color-0 { background-color: #e74c3c; } /* Rojo */
+.answer-button.color-1 { background-color: #3498db; } /* Azul */
+.answer-button.color-2 { background-color: #f1c40f; color: #333; } /* Amarillo (texto oscuro) */
+.answer-button.color-3 { background-color: #2ecc71; } /* Verde */
+
+/* Estilos para feedback de respuesta */
+.answer-button.correct-answer {
+    background-color: #27ae60 !important; /* Verde más oscuro para correcto */
+    /* Puedes añadir un icono o animación aquí */
+}
+
+.answer-button.incorrect-answer {
+    background-color: #c0392b !important; /* Rojo más oscuro para incorrecto */
+    opacity: 0.7;
+}
+
+.answer-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+/* Para que el botón correcto se mantenga con su color verde aunque esté deshabilitado y no haya sido el clickeado */
+.answer-button.correct-answer:disabled {
+    opacity: 1; /* O el valor que desees para que se vea bien */
+}
+
+
+#modalResultText {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 1.5em; /* Para evitar saltos de layout */
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa por Ayuntamiento</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="ayuntamiento.css">
+    <link rel="stylesheet" href="tabs.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Eliminado el overlay de ayuntamiento -->
+    <div id="app-content">
+      <div id="map"></div>
+      <div id="search-container">
+          <input type="text" id="search-input" placeholder="Buscar ubicación...">
+          <div id="search-results" class="hidden"></div>
+      </div>
+      <button class="menu-button">☰ Menú</button>
+      <div id="options-panel" class="hidden">
+          <div class="tab-buttons">
+              <button class="tab-button active" data-tab="locations">Ubicaciones</button>
+              <button class="tab-button" data-tab="details">Detalles</button>
+          </div>
+          <div id="locations-tab" class="tab-content active">
+              <ul id="locations-list" class="locations-list">
+                  <!-- Aquí se mostrarán las ubicaciones -->
+              </ul>
+          </div>
+          <div id="details-tab" class="tab-content">
+              <div class="input-group">
+                  <label for="title">Título:</label>
+                  <input type="text" id="title" name="title">
+              </div>
+              <div class="input-group">
+                  <label for="description">Descripción:</label>
+                  <textarea id="description" name="description" rows="3"></textarea>
+              </div>
+              <div class="input-group">
+                  <label for="question">Pregunta:</label>
+                  <input type="text" id="question" name="question">
+              </div>
+              <div class="answers-group">
+                  <h4>Respuestas:</h4>
+                  <div class="answer-item">
+                      <input type="text" id="answer1" placeholder="Respuesta 1 (Correcta)">
+                      <input type="radio" name="correct-answer" value="0" id="correct1" checked disabled> <label for="correct1">Correcta</label>
+                  </div>
+                  <div class="answer-item">
+                      <input type="text" id="answer2" placeholder="Respuesta 2">
+                      <input type="radio" name="correct-answer" value="1" id="correct2" disabled> <label for="correct2">Incorrecta</label>
+                  </div>
+                  <div class="answer-item">
+                      <input type="text" id="answer3" placeholder="Respuesta 3">
+                      <input type="radio" name="correct-answer" value="2" id="correct3" disabled> <label for="correct3">Incorrecta</label>
+                  </div>
+                  <div class="answer-item">
+                      <input type="text" id="answer4" placeholder="Respuesta 4">
+                      <input type="radio" name="correct-answer" value="3" id="correct4" disabled> <label for="correct4">Incorrecta</label>
+                  </div>
+              </div>
+              <div class="input-group">
+                  <label for="details-icon-selector"><b>Icono del marcador:</b></label>
+                  <div id="details-icon-selector"></div>
+              </div>
+              <div class="details-buttons">
+                  <button id="save-details-button">Guardar Detalles</button>
+                  <button id="cancel-details-button">Cancelar</button>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script src="render.js"></script>
+</body>
+</html>
+<body>
+    <div id="ayuntamiento-overlay" style="position: fixed; z-index: 9999; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="background: #fff; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.2); display: flex; flex-direction: column; align-items: center;">
+            <h2>Selecciona tu ayuntamiento</h2>
+            <input type="text" id="ayuntamiento-input" placeholder="Nombre del ayuntamiento" style="padding: 8px; font-size: 16px; margin-bottom: 12px;">
+            <button id="ayuntamiento-btn" style="padding: 8px 16px; font-size: 16px;">Entrar</button>
+            <div style="margin-top: 16px; font-size: 14px; color: #888;">O crea una cuenta nueva escribiendo un nombre único</div>
+        </div>
+    </div>
+    <div id="app-content" style="display: none;">
+        <div id="map" style="width: 100vw; height: 100vh;"></div>
+        <!-- El resto de tu app aquí -->
+    </div>
+</body>

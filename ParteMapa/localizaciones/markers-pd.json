@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1747063865730,
+    "lat": 39.44891948347229,
+    "lng": -0.38452148437500006,
+    "name": "puto",
+    "description": "",
+    "question": "",
+    "iconType": "church",
+    "answers": []
+  },
+  {
+    "id": 1747063976488,
+    "lat": 38.35027253825765,
+    "lng": -0.5108642578125001,
+    "name": "monumento",
+    "description": "alsdlaslaslasdsad",
+    "question": "quien es",
+    "iconType": "monument",
+    "answers": [
+      {
+        "text": "soy yo, conca, entro",
+        "isCorrect": false
+      },
+      {
+        "text": "yo",
+        "isCorrect": false
+      },
+      {
+        "text": "si",
+        "isCorrect": false
+      },
+      {
+        "text": "ni",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747069052457,
+    "lat": 38.83877165383055,
+    "lng": 0.10059356689453126,
+    "name": "putos",
+    "description": "",
+    "question": "",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      }
+    ]
+  }
+]

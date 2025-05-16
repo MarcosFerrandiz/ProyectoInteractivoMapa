@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1747346802652,
+    "lat": 38.79858063426501,
+    "lng": 0.0445246696472168,
+    "name": "polideportivo",
+    "description": "",
+    "question": "",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747347379312,
+    "lat": 38.789482680907135,
+    "lng": 0.04842996597290039,
+    "name": "manumento test",
+    "description": "adasdasddas",
+    "question": "monumento",
+    "iconType": "monument",
+    "answers": [
+      {
+        "text": "si",
+        "isCorrect": false
+      },
+      {
+        "text": "no",
+        "isCorrect": false
+      },
+      {
+        "text": "tal vez",
+        "isCorrect": false
+      },
+      {
+        "text": " no se",
+        "isCorrect": false
+      }
+    ]
+  }
+]

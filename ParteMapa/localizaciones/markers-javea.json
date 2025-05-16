@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1746902030478,
+    "lat": 38.79423249261201,
+    "lng": 0.16685485839843753,
+    "name": "casa",
+    "description": "es la casa del padre jesus",
+    "question": "De quien es la casa",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "Del padre jesus",
+        "isCorrect": true
+      },
+      {
+        "text": "mia",
+        "isCorrect": false
+      },
+      {
+        "text": "tuya",
+        "isCorrect": false
+      },
+      {
+        "text": "suya",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1746902042881,
+    "lat": 38.7817551983442,
+    "lng": 0.18346309661865237,
+    "name": "manumento",
+    "description": "",
+    "question": "",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "Respuesta A",
+        "isCorrect": true
+      },
+      {
+        "text": "Respuesta B",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta C",
+        "isCorrect": false
+      },
+      {
+        "text": "Respuesta D",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747064489111,
+    "lat": 38.35458032659834,
+    "lng": -0.5163574218750001,
+    "name": "Alicante",
+    "description": "",
+    "question": "",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747243776499,
+    "lat": 38.969819658304935,
+    "lng": -0.17852783203125003,
+    "name": "gandia",
+    "description": "",
+    "question": "",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747350795938,
+    "lat": 38.78952449401066,
+    "lng": 0.0461500883102417,
+    "name": "test espero que el definitivo",
+    "description": "adsdfsdf",
+    "question": "45yrtrettret",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": " esta",
+        "isCorrect": true
+      },
+      {
+        "text": "erertterert",
+        "isCorrect": false
+      },
+      {
+        "text": "uiuikuikuiky",
+        "isCorrect": false
+      },
+      {
+        "text": "23342342234",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747414034868,
+    "lat": 39.46258377894491,
+    "lng": -0.4026478528976441,
+    "name": "test",
+    "description": "efwfrrfw",
+    "question": "ogoihrw",
+    "iconType": "church",
+    "answers": [
+      {
+        "text": "si",
+        "isCorrect": true
+      },
+      {
+        "text": "errttrtrerte",
+        "isCorrect": false
+      },
+      {
+        "text": "gdhhgjhhj",
+        "isCorrect": false
+      },
+      {
+        "text": "asdasdasd",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "id": 1747414067972,
+    "lat": 39.46891591198507,
+    "lng": -0.40548563003540045,
+    "name": "aqui no llega creo",
+    "description": "rouihiuhihju",
+    "question": "phpkgfhpgfhhgf",
+    "iconType": "monument",
+    "answers": [
+      {
+        "text": "esta",
+        "isCorrect": true
+      },
+      {
+        "text": "0238745",
+        "isCorrect": false
+      },
+      {
+        "text": "dfggfdgfdgdf",
+        "isCorrect": false
+      },
+      {
+        "text": "rttretyteert",
+        "isCorrect": false
+      }
+    ]
+  }
+]

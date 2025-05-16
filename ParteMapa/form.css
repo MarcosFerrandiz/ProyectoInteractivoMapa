@@ -1,0 +1,331 @@
+.input-group {
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    background: #ffffff;
+}
+
+.answers-group {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.answers-group h4 {
+    color: #2c3e50;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.answer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.answer-item input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.answer-item input[type="text"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.answer-item input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.answer-item label {
+    font-size: 14px;
+    color: #64748b;
+}
+
+#details-icon-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icon-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-group {
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    max-height: 300px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.answers-group {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.answer-item {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+#details-tab {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    box-sizing: border-box;
+}
+
+.icon-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.icon-option.selected {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.icon-option img {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.icon-option:hover img {
+    transform: scale(1.1);
+}
+
+.icon-option span {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.details-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+#save-details-button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+}
+#save-details-button:hover {
+    background: #1976D2;
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.18);
+}
+#cancel-details-button {
+    background: #f5f5f5;
+    color: #666;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+#cancel-details-button:hover {
+    background: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos para el popup de creación de marcadores */
+.marker-form {
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    min-width: 280px;
+}
+
+.marker-form h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+.marker-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.icon-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.icon-option {
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.icon-option:hover {
+    border-color: #2196F3;
+    background-color: #f5f5f5;
+}
+
+.icon-option.selected {
+    border-color: #2196F3;
+    background-color: #e3f2fd;
+}
+
+.icon-option img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+.icon-option span {
+    display: block;
+    font-size: 12px;
+    color: #666;
+}
+
+.marker-form .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.marker-form button {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+#popupSaveMarkerButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#popupSaveMarkerButton:hover {
+    background-color: #45a049;
+}
+
+#popupCancelMarkerButton {
+    background-color: #f44336;
+    color: white;
+}
+
+#popupCancelMarkerButton:hover {
+    background-color: #da190b;
+}
+
+/* Estilos para el popup de Leaflet */
+.custom-popup .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 15px;
+}

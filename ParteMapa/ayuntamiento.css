@@ -1,0 +1,57 @@
+.ayto-overlay-white {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ayto-modal-top {
+    margin-top: 60px;
+    background: #fff;
+    padding: 36px 32px 28px 32px;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+    max-width: 90vw;
+}
+.ayto-modal-top h2 {
+    margin-bottom: 18px;
+    color: #222;
+}
+#ayuntamiento-input {
+    padding: 10px;
+    font-size: 17px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    width: 220px;
+}
+#ayuntamiento-btn {
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    background: #1976d2;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#ayuntamiento-btn:hover {
+    background: #125ea7;
+}
+.overlay-hint {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
