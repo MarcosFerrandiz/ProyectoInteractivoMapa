@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa de Ubicaciones</title>
     
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="preguntas.css"> {/* Añade esta línea */}
     
@@ -25,20 +24,17 @@
 <body>
     <div id="map"></div>
 
-    <!-- HTML del Modal de Preguntas -->
     <div id="questionModal" class="modal-overlay">
         <div class="modal-content">
             <button id="closeModalButton" class="modal-close-button">&times;</button>
             <h2 id="modalMarkerName">Nombre del Marcador</h2>
             <p id="modalQuestionText">Aquí va la pregunta.</p>
             <div id="modalAnswersContainer" class="answers-grid">
-                <!-- Los botones de respuesta se generarán aquí por JavaScript -->
             </div>
-            <p id="modalResultText" class="modal-result"></p> <!-- Aunque no se comprueba en el if inicial de map.js, se usa después -->
+            <p id="modalResultText" class="modal-result"></p> 
         </div>
     </div>
 
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="map.js"></script>
 </body>

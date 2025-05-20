@@ -1,13 +1,13 @@
 let map;
-let userLocation; // Se establecerá con la geolocalización
-let userMarker; // Para almacenar el marcador del usuario
-let accuracyCircle; // Para almacenar el círculo de precisión
-let allMarkersData = []; // Almacenará todos los marcadores cargados del JSON
-let displayedMarkersLayer; // Declarar globalmente sin inicializar aquí
+let userLocation;
+let userMarker; 
+let accuracyCircle; 
+let allMarkersData = []; 
+let displayedMarkersLayer;
 
-const INTERACTION_RADIUS_METERS = 50; // Radio en metros para mostrar la pregunta
+const INTERACTION_RADIUS_METERS = 50; 
 
-// Definición de iconos (similar a ParteMapa/render.js)
+
 const iconTypes = {
     church: L.icon({
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/89/89013.png',
@@ -21,7 +21,7 @@ const iconTypes = {
         iconUrl: 'https://cdn-icons-png.flaticon.com/512/126/126307.png',
         iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -32]
     }),
-    default: L.icon({ // Icono por defecto si no se especifica o no se encuentra
+    default: L.icon({ 
         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
         iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
@@ -29,58 +29,50 @@ const iconTypes = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    map = L.map('map').setView([40.416775, -3.703790], 6); // Vista inicial por defecto
+    map = L.map('map').setView([40.416775, -3.703790], 6); 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Inicializa displayedMarkersLayer aquí
     displayedMarkersLayer = L.layerGroup().addTo(map);
 
     map.locate({ watch: true, setView: false, enableHighAccuracy: true });
 
     map.on('locationfound', onLocationFound);
-    map.on('locationerror', onLocationError); // Asegúrate de tener esta función definida
+    map.on('locationerror', onLocationError);
 
-    fetchMarkers(); // Carga inicial de marcadores
+    fetchMarkers(); 
 
-    // Event listener para el botón de cerrar el modal
     const closeModalButton = document.getElementById('closeModalButton');
     if (closeModalButton) {
         closeModalButton.addEventListener('click', hideQuestionModal);
     }
-    // Opcional: cerrar modal si se hace clic fuera del contenido del modal
     const questionModalOverlay = document.getElementById('questionModal');
     if (questionModalOverlay) {
         questionModalOverlay.addEventListener('click', function(event) {
-            if (event.target === questionModalOverlay) { // Si el clic es en el overlay directamente
+            if (event.target === questionModalOverlay) { 
                 hideQuestionModal();
             }
         });
     }
 
-    // Añadir listener para actualizar marcadores cuando la pestaña/app se vuelve visible
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
             console.log('Página visible, actualizando marcadores desde ParteMovil/map.js...');
-            fetchMarkers(); // Re-solicitar marcadores
+            fetchMarkers(); 
         }
     });
 });
 
-// Nueva función para barajar un array (Fisher-Yates shuffle)
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
-    const newArray = [...array]; // Crear una copia para no mutar el original
+    const newArray = [...array]; 
 
-    // Mientras queden elementos a barajar.
     while (currentIndex !== 0) {
-        // Elegir un elemento restante.
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
-        // E intercambiarlo con el elemento actual.
         [newArray[currentIndex], newArray[randomIndex]] = [
             newArray[randomIndex], newArray[currentIndex]];
     }
@@ -89,10 +81,10 @@ function shuffleArray(array) {
 
 function onLocationFound(e) {
     userLocation = e.latlng;
-    const newRadius = 2000; // Radio en metros, 2 kilómetros
+    const newRadius = 2000; 
 
-    if (!userMarker) { // Si es la primera vez que se encuentra la ubicación
-        map.setView(userLocation, 13); // Ajustar vista y zoom para el nuevo radio
+    if (!userMarker) { 
+        map.setView(userLocation, 13); 
 
         userMarker = L.marker(userLocation, { icon: iconTypes.default })
             .addTo(map)
@@ -101,21 +93,17 @@ function onLocationFound(e) {
 
         accuracyCircle = L.circle(userLocation, {
             radius: newRadius,
-            weight: 1, // Grosor del borde del círculo
-            color: 'blue', // Color del borde
-            fillColor: '#3388ff', // Color de relleno
-            fillOpacity: 0.1 // Opacidad del relleno (0.05 es muy bajo, 0.1 o 0.15 es mejor)
+            weight: 1,
+            color: 'blue', 
+            fillColor: '#3388ff', 
+            fillOpacity: 0.1 
         }).addTo(map);
-    } else { // Si ya existen, solo actualizar su posición y radio
+    } else { 
         userMarker.setLatLng(userLocation);
         accuracyCircle.setLatLng(userLocation).setRadius(newRadius);
-        // Opcional: si quieres que el mapa se centre en el usuario con cada actualización:
-        // map.panTo(userLocation);
     }
 
     console.log('Ubicación actualizada:', userLocation);
-    // Una vez encontrada/actualizada la ubicación, filtrar y mostrar marcadores cercanos
-    // Asegurarse de que allMarkersData ya se haya cargado
     if (allMarkersData.length > 0) {
         console.log('Ubicación actualizada y marcadores cargados, llamando a displayNearbyMarkers.');
         displayNearbyMarkers();
@@ -127,19 +115,15 @@ function onLocationFound(e) {
 function onLocationError(e) {
     console.error("Error al obtener la ubicación: " + e.message);
     alert("No se pudo obtener tu ubicación. Se mostrará una vista general. Asegúrate de dar permisos de ubicación.");
-    // Si no se puede obtener la ubicación, no se llamará a displayNearbyMarkers con userLocation.
-    // Podrías optar por mostrar todos los marcadores si lo deseas, o ninguno.
-    // Por ahora, si no hay ubicación, los logs en displayNearbyMarkers lo indicarán.
-    displayNearbyMarkers(); // Intentará mostrar, pero sin userLocation, los logs lo dirán.
+    displayNearbyMarkers(); 
 }
 
 function fetchMarkers() {
-    // Añadir un parámetro anti-caché a la URL para asegurar datos frescos
-    const cacheBuster = new Date().getTime();
-    fetch(`../ParteMapa/localizaciones/markers-todos.json?t=${cacheBuster}`)
+    const jsonUrl = 'https://raw.githubusercontent.com/emanol/ProyectoFinalMapa/main/ParteMapa/localizaciones/markers-todos.json';
+    fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}, ${response.statusText}`);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.json();
         })
@@ -152,7 +136,6 @@ function fetchMarkers() {
                 allMarkersData = data;
             }
             console.log('Marcadores cargados desde JSON:', allMarkersData.length, '(ParteMovil/map.js)');
-            // Si la ubicación ya se encontró, mostrar marcadores. Si no, onLocationFound lo hará.
             if (userLocation) {
                 console.log('Marcadores cargados y ubicación ya disponible, llamando a displayNearbyMarkers desde fetchMarkers (ParteMovil/map.js).');
                 displayNearbyMarkers();
@@ -166,9 +149,8 @@ function fetchMarkers() {
         });
 }
 
-// Función para calcular la distancia entre dos coordenadas (Haversine)
 function calculateDistance(lat1, lon1, lat2, lon2) {
-    const R = 6371; // Radio de la Tierra en km
+    const R = 6371; 
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
@@ -176,14 +158,13 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
         Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c; // Distancia en km
+    return R * c; 
 }
 
 function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
-// --- Funciones para el Modal de Preguntas ---
 function showQuestionModal(markerData) {
     const modal = document.getElementById('questionModal');
     const markerNameEl = document.getElementById('modalMarkerName');
@@ -196,7 +177,6 @@ function showQuestionModal(markerData) {
         return;
     }
     
-    // Log 1: Verifica los datos del marcador y sus respuestas al entrar a la función
     console.log("showQuestionModal: markerData recibido:", JSON.parse(JSON.stringify(markerData))); 
     if (!markerData || !markerData.answers || !Array.isArray(markerData.answers)) {
         console.error("showQuestionModal: markerData.answers falta o no es un array!", markerData);
@@ -221,7 +201,6 @@ function showQuestionModal(markerData) {
         button.classList.add(answerButtonColors[index % answerButtonColors.length]); 
         button.textContent = answer.text;
 
-        // Logs detallados para depurar isCorrect
         const originalIsCorrect = answer.isCorrect;
         const typeOfOriginalIsCorrect = typeof originalIsCorrect;
         const stringifiedIsCorrectNormalized = String(originalIsCorrect).trim().toLowerCase();
@@ -232,7 +211,7 @@ function showQuestionModal(markerData) {
           Stringified/Normalized: "${stringifiedIsCorrectNormalized}"
           Dataset será 'true'?: ${isDataSetGoingToBeTrue}`);
         
-        button.dataset.isCorrect = stringifiedIsCorrectNormalized; // Asignar el valor normalizado
+        button.dataset.isCorrect = stringifiedIsCorrectNormalized;
 
         button.onclick = function() {
             const allButtons = answersContainerEl.querySelectorAll('.answer-button');
@@ -243,7 +222,6 @@ function showQuestionModal(markerData) {
                 }
             });
 
-            // Log 4: Dentro de onclick, verifica el valor del dataset del botón pulsado
             console.log(`Botón pulsado: Texto='${this.textContent}', dataset.isCorrect='${this.dataset.isCorrect}'`);
 
             if (this.dataset.isCorrect === 'true') {
@@ -265,14 +243,8 @@ function hideQuestionModal() {
     const modal = document.getElementById('questionModal');
     if (modal) {
         modal.classList.remove('visible');
-        // Opcional: resetear el contenido del modal al cerrarlo para la próxima vez
-        // const resultTextEl = document.getElementById('modalResultText');
-        // if (resultTextEl) resultTextEl.textContent = '';
-        // const answersContainerEl = document.getElementById('modalAnswersContainer');
-        // if (answersContainerEl) answersContainerEl.innerHTML = '';
     }
 }
-// --- Fin Funciones para el Modal de Preguntas ---
 
 
 function displayNearbyMarkers() {
@@ -281,9 +253,9 @@ function displayNearbyMarkers() {
         console.error("displayedMarkersLayer no está inicializado.");
         return;
     }
-    displayedMarkersLayer.clearLayers(); // Limpiar marcadores anteriores
+    displayedMarkersLayer.clearLayers(); 
 
-    const radiusKmToShowMarkers = 2; // Radio en kilómetros para mostrar marcadores en el mapa
+    const radiusKmToShowMarkers = 2; 
     console.log(`Radio para mostrar marcadores en el mapa: ${radiusKmToShowMarkers} km`);
 
     if (!allMarkersData || allMarkersData.length === 0) {
@@ -302,7 +274,7 @@ function displayNearbyMarkers() {
     allMarkersData.forEach(markerData => {
         if (typeof markerData.lat !== 'number' || typeof markerData.lng !== 'number') {
             console.warn('Marcador con datos de lat/lng inválidos:', markerData);
-            return; // Saltar este marcador
+            return; 
         }
 
         const distanceToMarker = calculateDistance(
@@ -310,7 +282,6 @@ function displayNearbyMarkers() {
             markerData.lat, markerData.lng
         );
         
-        // Log para cada marcador, incluso si está lejos del radio de visualización
         console.log(`Marcador: "${markerData.name || 'Sin nombre'}" (ID: ${markerData.id || 'N/A'}) - Distancia para visualización: ${distanceToMarker.toFixed(2)} km`);
 
         if (distanceToMarker <= radiusKmToShowMarkers) {
@@ -323,7 +294,7 @@ function displayNearbyMarkers() {
 
             marker.on('click', function() {
                 const clickedMarkerData = this.customData;
-                let popupContent = ''; // Para el popup simple si no se muestra el modal
+                let popupContent = ''; 
 
                 if (userLocation) {
                     const distanceUserToClickedMarkerKm = calculateDistance(
@@ -338,8 +309,8 @@ function displayNearbyMarkers() {
                         console.log(`Usuario DENTRO del radio de interacción de ${INTERACTION_RADIUS_METERS}m.`);
                         if (clickedMarkerData.question && clickedMarkerData.answers && clickedMarkerData.answers.length > 0) {
                             console.log('Mostrando modal de pregunta.');
-                            showQuestionModal(clickedMarkerData); // <--- AQUÍ SE LLAMA AL MODAL
-                            return; // Salir para no mostrar el popup de Leaflet
+                            showQuestionModal(clickedMarkerData); 
+                            return; 
                         } else {
                             popupContent = `<b>${clickedMarkerData.name || 'Punto de Interés'}</b><br>No hay pregunta disponible para este punto.`;
                             if (clickedMarkerData.description) {
@@ -360,7 +331,6 @@ function displayNearbyMarkers() {
                         popupContent += `<br>${clickedMarkerData.description}`;
                     }
                 }
-                // Solo mostrar el popup de Leaflet si no se mostró el modal
                 this.bindPopup(popupContent).openPopup();
             });
             
