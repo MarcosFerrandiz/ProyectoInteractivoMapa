@@ -247,24 +247,24 @@
     "lat": 38.788374624727616,
     "lng": 0.1783186197280884,
     "name": "Test para enseñar",
-    "description": "",
-    "question": "",
-    "iconType": "viewpoint",
+    "description": "wergwerht",
+    "question": "ewrrewwtttrw",
+    "iconType": "church",
     "answers": [
       {
-        "text": "",
+        "text": "esta",
+        "isCorrect": true
+      },
+      {
+        "text": "reggdfg",
         "isCorrect": false
       },
       {
-        "text": "",
+        "text": "erewr",
         "isCorrect": false
       },
       {
-        "text": "",
-        "isCorrect": false
-      },
-      {
-        "text": "",
+        "text": "sdfsfdsf",
         "isCorrect": false
       }
     ]
