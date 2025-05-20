@@ -241,5 +241,32 @@
         "isCorrect": false
       }
     ]
+  },
+  {
+    "id": 1747756362622,
+    "lat": 38.788374624727616,
+    "lng": 0.1783186197280884,
+    "name": "Test para enseñar",
+    "description": "",
+    "question": "",
+    "iconType": "viewpoint",
+    "answers": [
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      },
+      {
+        "text": "",
+        "isCorrect": false
+      }
+    ]
   }
 ]
